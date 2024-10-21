@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Series & Number Checker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Special Series & Number Checker</h1>
+        <div class="calculator-box">
+            <label for="number">Enter a number (N):</label>
+            <input type="number" id="number" name="number" required>
+
+            <label for="action">Select an Action:</label>
+            <select id="action" name="action" onchange="toggleOptions()">
+                <option value="">Select Action</option>
+                <option value="generate_series">Generate N digit Series</option>
+                <option value="check_special_number">Check Special Number</option>
+            </select>
+
+            <!-- Dropdown for generating series -->
+            <div id="series-options" style="display:none;">
+                <label for="series">Choose a Series:</label>
+                <select id="series" name="series">
+                    <option value="fibonacci">Fibonacci</option>
+                    <option value="prime">Prime</option>
+                    <option value="factorial">Factorial</option>
+                    <option value="armstrong_series">Armstrong Series</option>
+                    <option value="pell">Pell</option>
+                </select>
+                <button onclick="submitForm('generate_series')">Generate N digit Series</button>
+            </div>
+
+            <!-- Dropdown for checking special numbers -->
+            <div id="number-options" style="display:none;">
+                <label for="special_number">Choose a Special Number Type:</label>
+                <select id="special_number" name="special_number">
+                    <option value="prime">Prime</option>
+                    <option value="armstrong">Armstrong</option>
+                    <option value="perfect">Perfect</option>
+                    <option value="harshad">Harshad</option>
+                    <option value="automorphic">Automorphic</option>
+                </select>
+                <button onclick="submitForm('check_special_number')">Check Special Number</button>
+            </div>
+        </div>
+
+        <div id="result">
+            {% if result %}
+                <h2>Result: {{ result }}</h2>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function toggleOptions() {
+            var action = document.getElementById('action').value;
+            document.getElementById('series-options').style.display = (action === 'generate_series') ? 'block' : 'none';
+            document.getElementById('number-options').style.display = (action === 'check_special_number') ? 'block' : 'none';
+        }
+
+        function submitForm(action) {
+            const number = document.getElementById('number').value;
+            let url = '';
+            
+            if (action === 'generate_series') {
+                const series = document.getElementById('series').value;
+                url = `/generate_series?number=${number}&series=${series}`;
+            } else if (action === 'check_special_number') {
+                const specialNumber = document.getElementById('special_number').value;
+                url = `/check_special_number?number=${number}&special_number=${specialNumber}`;
+            }
+
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

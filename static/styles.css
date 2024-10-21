@@ -1,0 +1,84 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Container for the form and result */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form Box */
+.calculator-box {
+    padding: 30px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Form Elements */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    border-color: #4CAF50;
+}
+
+/* Button Styling */
+button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Result Styling */
+#result h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+    }
+    .calculator-box {
+        padding: 20px;
+    }
+}
