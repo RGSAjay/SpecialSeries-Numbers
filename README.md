@@ -68,9 +68,9 @@ Specify the command to run the app:
 
   web: python app.py
 
-Contributing
+Contributing :
 Feel free to contribute by forking the repository and submitting a pull request.
 
-Acknowledgments
+Acknowledgments :
 Flask documentation for the framework guidance.
 Bootstrap for responsive design.
