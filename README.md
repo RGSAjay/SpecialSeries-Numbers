@@ -32,24 +32,24 @@ Make sure you have the following installed:
 - A code editor (e.g., Visual Studio Code)
 
 ### Installation
-1. Clone the repository:
+# 1. Clone the repository:
    
    git clone https://github.com/RGSAjay/SpecialSeries-Numers.git
 
-2.Navigate to the project directory:
+# 2.Navigate to the project directory:
 
    cd SpecialSeries-Numers
 
-3.Create and activate a virtual environment:
+# 3.Create and activate a virtual environment:
 
    python -m venv venv
    
-   # Windows
+   Windows
    venv\Scripts\activate
-   # macOS/Linux
+   macOS/Linux
    source venv/bin/activate
 
-4.Install the required packages:
+# 4.Install the required packages:
 
    pip install -r requirements.txt
 
